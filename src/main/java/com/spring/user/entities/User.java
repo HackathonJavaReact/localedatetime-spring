@@ -1,13 +1,17 @@
-package com.spring.user;
+package com.spring.user.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -23,4 +27,9 @@ public class User {
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") // https://www.programmersought.com/article/7004126289/
     private LocalDateTime birth;
+
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    private List<Message> messages;
+
 }

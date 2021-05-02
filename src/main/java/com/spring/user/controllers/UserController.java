@@ -1,6 +1,10 @@
-package com.spring.user;
+package com.spring.user.controllers;
 
 import java.util.List;
+
+import com.spring.user.entities.User;
+import com.spring.user.exceptions.DatabaseException;
+import com.spring.user.services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
